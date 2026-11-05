@@ -1,28 +1,30 @@
 # Dhun
 
-Dhun is an original, responsive music player prototype. It is a standalone web app that can be installed on a phone as a Progressive Web App when hosted over HTTPS.
+Dhun is an independent, open-source music player PWA. It plays audio files that you import on your device and can optionally search and stream independent tracks through Jamendo's API after you configure your own Client ID.
 
 ## Run locally
 
-Open `index.html` for a quick preview. For the installable offline app, serve this folder over HTTP (the service worker is enabled on HTTP localhost and HTTPS):
+Open `index.html` for a quick preview. For offline caching and install support, serve the folder on localhost or HTTPS:
 
 ```sh
 npx serve .
 ```
 
-Open the local URL in a modern browser. On a phone, deploy the folder to an HTTPS host, visit the URL, then choose **Add to Home Screen** (iOS Safari) or **Install app** (Android Chrome).
+On a phone, open the HTTPS site and choose **Add to Home Screen** (iOS Safari) or **Install app** (Android Chrome).
+
+## Use Dhun
+
+- Choose **Import your music** and select audio files from your device. Imported audio stays in this browser's IndexedDB; it is not uploaded to Dhun or a server.
+- Search your imported library, play, pause, skip, seek, shuffle, and adjust volume.
+- Like tracks and create playlists. Your profile name, likes, playlists, and Jamendo Client ID are saved in this browser.
+- Optionally, create a Jamendo developer app, accept its API terms, and enter its Client ID in your Dhun profile settings. Dhun then offers catalog search and chillout discovery, with license links displayed for tracks. The API and each track's license terms still apply.
 
 ## Included
 
-- Responsive desktop and mobile layouts
-- Search across the included demo catalog
-- Local liked tracks, profile name, and playlist names (stored in this browser)
-- Player controls, progress, shuffle, repeat, and volume controls
-- Original synthesized tones for demo playback
-- PWA manifest and service worker for offline interface caching
+Responsive interface, local audio import and playback, IndexedDB media storage, likes and playlists, optional Jamendo search/playback, PWA manifest, and service worker.
 
-## Not connected yet
+## Limits
 
-The included tracks are fictional catalog entries and the player produces short synthesized demo tones. There are no commercial recordings. A world catalog requires licenses from rights holders and a streaming backend/CDN. Google sign-in needs OAuth configuration and a secure identity backend. User accounts, cross-device sync, production playback, and a hosted phone install require those services.
+This is a personal music player, not a commercial global streaming catalog. It does not bundle copyrighted recordings, provide Google sign-in or cloud account sync, or store music on a server. Jamendo is an independent artist catalog and does not include all commercial releases. User-imported audio remains subject to the user's rights to play it.
 
-This project is an independent product concept with its own Dhun name and visual design; it is not affiliated with Spotify.
+Dhun has its own name and design and is not affiliated with Spotify.
